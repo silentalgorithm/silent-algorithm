@@ -1,0 +1,15 @@
+{% macro service(title = "Aqui va el titulo", items = ["opcion 1", "opcion 2"]) %}
+<div class="bgrid">
+
+    <h3>{{ title }}</h3>
+
+    <div class="service-content">
+        {% for item in items %}
+        <p>{{ item }}</p>
+        {% endfor %}
+    </div>
+
+</div> <!-- end bgrid -->
+{% endmacro %}
+
+{# "aquellos que vasan el exito en el azar nunca seran duenos del destino" #}

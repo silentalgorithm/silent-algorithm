@@ -1,0 +1,35 @@
+<!-- homepage hero
+   ================================================== -->
+<section id="hero">
+
+    <div class="row hero-content">
+
+        <div class="twelve columns hero-container">
+
+            <!-- hero-slider start-->
+            <div id="hero-slider" class="flexslider">
+
+                <ul class="slides">
+
+                    <!-- slide -->
+                    {% from "ui/slide.njk" import slide %}
+                    <!-- -->
+                    {% for item in slides %}
+                    <!-- -->
+                    {{ slide(item.title, item.subtitle) }}
+                    <!-- -->
+                    {% endfor %}
+
+                </ul>
+
+            </div> <!-- end hero-slider -->
+
+        </div> <!-- end twelve columns-->
+
+    </div> <!-- end row -->
+
+    <div id="more">
+        <a class="smoothscroll" href="#services">Más sobre nosotros<i class="fa fa-angle-down"></i></a>
+    </div>
+
+</section> <!-- end homepage hero -->

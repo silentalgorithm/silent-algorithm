@@ -10,18 +10,18 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(IdAttributePlugin, { checkDuplicates: false });
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy({"src/js/**/*.js": "js"});
+  eleventyConfig.addPassthroughCopy({ "src/js/**/*.js": "js" });
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/fonts");
-  eleventyConfig.addPassthroughCopy("src/inc");
+  // eleventyConfig.addPassthroughCopy("src/inc");
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
   let nunjucksEnvironment = new Nunjucks.Environment(
-		new Nunjucks.FileSystemLoader("src/_includes")
-	);
+    new Nunjucks.FileSystemLoader("src/_includes"),
+  );
 
-	eleventyConfig.setLibrary("njk", nunjucksEnvironment);
+  eleventyConfig.setLibrary("njk", nunjucksEnvironment);
 }
 
 export const config = {

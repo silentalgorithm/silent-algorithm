@@ -3,32 +3,34 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
-
   "version": "",
-  "description": "",
+  "description": "The Silent Algorithm es un equipo de desarrolladores de software apasionados por la tecnología y la innovación.",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
     "clean": "rm -rf docs"
   },
   "keywords": [
-    "11ty",
-    "eleventy",
-    "github pages",
-    "jonmircha"
+    "algoritmo silencioso",
+    "programacion",
+    "desarrollo",
+    "equipo",
+    "software",
+    "tecnologia",
+    "innovacion",
+    "The Silent Algorithm"
   ],
-  "author": "Jonathan MirCha <jonmircha@gmail.com>",
+  "author": "The Silent Algorithm <secreto@thesilentalgorithm.com>",
   "license": "MIT",
-
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^6.0.3"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "nunjucks": "^3.2.4"
   }
 }

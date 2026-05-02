@@ -217,7 +217,7 @@
       $.ajax({
         type: "POST",
         //   url: "inc/sendEmail.php",
-        url: "https://formsubmit.co/ajax/indotldesing@gmail.com",
+        url: "https://formsubmit.co/ajax/cf4613eefdedda49610cc78124d20ff1",
         data: $(form).serialize(),
         beforeSend: function () {
           sLoader.fadeIn();

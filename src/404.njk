@@ -1,0 +1,25 @@
+---
+layout: layouts/page.njk
+title: "Página no encontrada"
+descripcion: "La página que buscas no existe o fue movida."
+permalink: 404.html
+robots: "noindex"
+---
+
+<section style="min-height: 80vh; display: flex; align-items: center; padding-top: 80px;">
+  <div class="container" style="text-align: center;">
+    <p class="mono" style="color: var(--gold); margin-bottom: 24px;">Error 404</p>
+    <h1 class="section__title" style="font-size: clamp(3rem, 8vw, 7rem); margin-bottom: 16px;">
+      Página<br>
+      <em>no encontrada.</em>
+    </h1>
+    <p style="color: var(--smoke); font-size: 1.1rem; max-width: 480px; margin: 0 auto 48px; line-height: 1.75;">
+      Esta URL no existe o fue movida. Pero el algoritmo sigue trabajando en silencio por aquí.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="/" class="btn btn--primary">Ir al inicio</a>
+      <a href="/blog/" class="btn btn--ghost">Ver el blog</a>
+    </div>
+    <div aria-hidden="true" style="margin-top: 80px; font-family: var(--ff-serif); font-size: 8rem; color: rgba(201,168,76,0.05); font-style: italic; user-select: none;">∮</div>
+  </div>
+</section>

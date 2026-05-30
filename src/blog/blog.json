@@ -1,0 +1,9 @@
+{
+  "layout": "layouts/post.njk",
+  "ogType": "article",
+  "tags": ["post"],
+  "autor": "The Silent Algorithm",
+  "cargoAutor": "Engineering Team",
+  "destacado": false,
+  "draft": false
+}

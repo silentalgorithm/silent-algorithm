@@ -1,0 +1,190 @@
+{% extends "layouts/base.njk" %}
+
+{% block extraCss %}
+  <link rel="stylesheet" href="/assets/css/servicio.css">
+{% endblock %}
+
+{% block content %}
+
+  {# ── HERO DEL SERVICIO ── #}
+  <section class="servicio-hero" aria-labelledby="servicio-title">
+    <div class="container servicio-hero__inner">
+      <nav class="breadcrumb" aria-label="Navegación de migas">
+        <ol>
+          <li>
+            <a href="/">Inicio</a>
+          </li>
+          <li>
+            <a href="/#servicios">Servicios</a>
+          </li>
+          <li aria-current="page">{{ title }}</li>
+        </ol>
+      </nav>
+      <p class="section__label reveal">
+        <span aria-hidden="true"></span>Servicio detallado</p>
+      <h1 class="servicio-hero__title reveal reveal--delay-1" id="servicio-title">{{ title }}</h1>
+      <p class="servicio-hero__intro reveal reveal--delay-2">{{ descripcionLarga or resumen }}</p>
+
+      <div class="servicio-hero__meta reveal reveal--delay-3">
+        {% if tiempoEntrega %}
+          <div class="servicio-meta-item">
+            <span class="mono">Tiempo de entrega</span>
+            <strong>{{ tiempoEntrega }}</strong>
+          </div>
+        {% endif %}
+        {% if precioDesde %}
+          <div class="servicio-meta-item">
+            <span class="mono">Desde</span>
+            <strong>${{ precioDesde }} USD</strong>
+          </div>
+        {% endif %}
+        {% if garantia %}
+          <div class="servicio-meta-item">
+            <span class="mono">Soporte incluido</span>
+            <strong>{{ garantia }}</strong>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {# ── DESCRIPCIÓN COMPLETA (Markdown) ── #}
+  {% if content | trim %}
+    <section class="section">
+      <div class="container">
+        <div class="servicio-content prose reveal">
+          {{ content | safe }}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {# ── PAQUETES ── #}
+
+  {# {% if paquetes %}
+    <section class="section section--alt" aria-labelledby="paquetes-title">
+      <div class="container">
+        <p class="section__label reveal">
+          <span aria-hidden="true"></span>Planes y precios</p>
+        <h2 class="section__title reveal reveal--delay-1" id="paquetes-title">
+            Elige el paquete<br>
+          <em>correcto para ti.</em>
+        </h2>
+        <p class="section__sub reveal reveal--delay-2" style="margin-bottom: 60px;">
+          Todos los paquetes incluyen consulta inicial sin costo. Si ninguno se ajusta a tu situación, cuéntanos y diseñamos una propuesta a medida.
+        </p>
+
+        <div class="packages-grid">
+          {% for paquete in paquetes %}
+            <article class="package-card{% if paquete.destacado %} package-card--featured{% endif %} reveal reveal--delay-{{ loop.index }}">
+              {% if paquete.destacado %}
+                <div class="package-card__badge">Recomendado</div>
+              {% endif %}
+
+              <header class="package-card__header">
+                <p class="package-card__tier">{{ paquete.nivel }}</p>
+                <h3 class="package-card__name">{{ paquete.nombre }}</h3>
+                <div class="package-card__price">
+                  <span class="package-card__amount">${{ paquete.precio }}</span>
+                  <span class="package-card__currency mono">USD</span>
+                </div>
+                <p class="package-card__period mono">{{ paquete.modalidad }}</p>
+                <p class="package-card__desc">{{ paquete.descripcion }}</p>
+              </header>
+
+              <div class="package-card__divider"></div>
+
+              <ul class="package-card__features" aria-label="Características incluidas">
+                {% for feature in paquete.caracteristicas %}
+                  <li>
+                    <span class="package-card__check" aria-hidden="true">●</span>
+                    {{ feature }}
+                  </li>
+                {% endfor %}
+              </ul>
+
+              <footer class="package-card__footer">
+                <!--
+                  href="/#contacto?servicio={{ title | slugify }}&paquete={{ paquete.nombre | slugify }}"
+                 -->
+                <a
+                data-service="{{titleService}}"
+                data-package="{{paquete.nombre}}"
+                  href="/#contacto"
+                  class="btn{% if paquete.destacado %} btn--primary{% else %} btn--ghost{% endif %} btn--full"
+                  aria-label="Solicitar paquete {{ paquete.nombre }} de {{ title }}"
+                  id="btn-service"
+                >
+                  Solicitar este paquete
+                </a>
+              </footer>
+            </article>
+          {% endfor %}
+        </div>
+
+        <p class="packages-note reveal" style="text-align: center; margin-top: 40px;">
+          <span class="mono" style="color: var(--smoke);">¿Necesitas algo diferente? </span>
+          <a href="/#contacto" style="color: var(--gold);">Cuéntanos y cotizamos a medida →</a>
+        </p>
+
+      </div>
+    </section>
+  {% endif %} #}
+
+  {# ── PROCESO DE TRABAJO ── #}
+  <section class="section" aria-labelledby="proceso-title">
+    <div class="container">
+      <p class="section__label reveal">
+        <span aria-hidden="true"></span>Cómo trabajamos</p>
+      <h2 class="section__title reveal reveal--delay-1" id="proceso-title">
+      El proceso,<br>
+        <em>paso a paso.</em>
+      </h2>
+
+      <ol class="proceso-steps reveal reveal--delay-2" aria-label="Pasos del proceso de trabajo">
+        <li class="proceso-step">
+          <span class="proceso-step__num">01</span>
+          <h3 class="proceso-step__title">Discovery</h3>
+          <p class="proceso-step__desc">Entendemos tu problema en profundidad antes de escribir una línea de código.</p>
+        </li>
+        <li class="proceso-step">
+          <span class="proceso-step__num">02</span>
+          <h3 class="proceso-step__title">Propuesta</h3>
+          <p class="proceso-step__desc">Documento técnico y comercial detallado. Sin letra chica, sin sorpresas.</p>
+        </li>
+        <li class="proceso-step">
+          <span class="proceso-step__num">03</span>
+          <h3 class="proceso-step__title">Desarrollo</h3>
+          <p class="proceso-step__desc">Sprints quincenales con demos reales. Ves el avance, no solo reportes.</p>
+        </li>
+        <li class="proceso-step">
+          <span class="proceso-step__num">04</span>
+          <h3 class="proceso-step__title">Testing</h3>
+          <p class="proceso-step__desc">QA riguroso antes de cada entrega. Cero sorpresas en producción.</p>
+        </li>
+        <li class="proceso-step">
+          <span class="proceso-step__num">05</span>
+          <h3 class="proceso-step__title">Soporte</h3>
+          <p class="proceso-step__desc">60 días de soporte post-entrega incluidos en todos los paquetes.</p>
+        </li>
+      </ol>
+
+    </div>
+  </section>
+
+  {# ── CTA ── #}
+  <section class="section cta-block" aria-labelledby="cta-servicio-title">
+    <div class="container cta-block__inner">
+      <div>
+        <h2 class="cta-block__title" id="cta-servicio-title">
+        ¿Este servicio es lo que<br>necesitas? <em>Hablemos.</em>
+        </h2>
+        <p class="cta-block__sub">Consulta inicial sin costo. 30 minutos que pueden cambiar tu negocio.</p>
+      </div>
+      <a href="/#contacto" id="btn-service" data-service="{{titleService}}" data-package="" class="btn btn--primary">
+      Solicitar consulta gratuita
+    </a>
+    </div>
+  </section>
+
+{% endblock %}

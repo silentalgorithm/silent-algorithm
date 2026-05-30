@@ -1,0 +1,75 @@
+{% extends "layouts/base.njk" %}
+
+{% block extraCss %}
+  <link rel="stylesheet" href="/assets/css/blog-post.css">
+{% endblock %}
+
+{% block content %}
+  <div class="blog-all-header container">
+    <div>
+      <h1 class="section__title">El <em>Blog.</em><br>Nuestro libro digital.</h1>
+      <p class="section__sub" style="margin-top: 16px;">
+      Artículos técnicos y reflexiones de negocio que muestran cómo pensamos.
+      </p>
+    </div>
+    <div class="blog-all-meta">
+      <p class="mono" style="color: var(--smoke);">{{ collections.blog.length }} artículos publicados</p>
+      <p class="mono" style="color: var(--gold); margin-top: 6px;">Actualizado semanalmente</p>
+    </div>
+  </div>
+
+  {# Category filter #}
+  <div class="container" style="padding-top: 40px; padding-bottom: 0;">
+    <div class="projects-filter reveal" role="tablist" aria-label="Filtrar por categoría">
+      <button class="filter-btn filter-btn--active" role="tab" aria-selected="true" data-filter="todos">Todo</button>
+      {% set cats = [] %}
+      {% for post in collections.blog %}
+        {% if post.data.categoria and post.data.categoria not in cats %}
+          {% set cats = cats.concat([post.data.categoria]) %}
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="{{ post.data.categoria }}">{{ post.data.categoria }}</button>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="blog-all-grid container reveal reveal--delay-1" style="padding-top: 40px; padding-bottom: 80px;" role="list">
+    {% for post in posts %}
+      <article class="blog-post-card" role="listitem" data-categoria="{{ post.data.categoria }}">
+        <div class="post-meta">
+          <span class="post-cat">{{ post.data.categoria }}</span>
+          <time class="post-date" datetime="{{ post.date | fechaISO }}">{{ post.date | fechaCorta }}</time>
+        </div>
+        <h2 class="blog-post-card__title">
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </h2>
+        <p class="blog-post-card__excerpt">{{ post.data.resumen | truncar(130) }}</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-top: var(--space-4); flex-wrap:wrap; gap:8px;">
+          <a href="{{ post.url }}" class="post-read-more" aria-label="Leer: {{ post.data.title }}">
+        Leer artículo <span aria-hidden="true">→</span>
+          </a>
+          <span class="mono" style="color: var(--smoke);">{{ post.templateContent | tiempoLectura }}</span>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  {# Pagination #}
+  {% if pagination.pages.length > 1 %}
+    <nav class="container" style="padding-bottom: 80px; display:flex; justify-content:center; gap: 8px;" aria-label="Paginación del blog">
+      {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}" class="btn btn--ghost" aria-label="Página anterior">← Anterior</a>
+      {% endif %}
+      {% for pageEntry in pagination.pages %}
+        <a
+    href="{{ pagination.hrefs[loop.index0] }}"
+    class="btn {% if loop.index0 == pagination.pageNumber %}btn--primary{% else %}btn--ghost{% endif %}"
+    {% if loop.index0 == pagination.pageNumber %}aria-current="page"{% endif %}
+  >{{ loop.index }}</a>
+      {% endfor %}
+      {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}" class="btn btn--ghost" aria-label="Página siguiente">Siguiente →</a>
+      {% endif %}
+    </nav>
+  {% endif %}
+
+{% endblock %}

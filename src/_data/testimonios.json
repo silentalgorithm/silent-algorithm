@@ -1,0 +1,38 @@
+[
+  {
+    "nombre": "María González",
+    "cargo": "CEO",
+    "empresa": "Logística Andina",
+    "inicial": "M",
+    "estrellas": 5,
+    "texto": "Entregaron exactamente lo que prometieron, en el tiempo acordado, y sin el caos típico de los proyectos de software. El sistema que construyeron ha reducido nuestros errores operativos en un 80%. No busco otro proveedor.",
+    "destacado": true
+  },
+  {
+    "nombre": "Carlos Herrera",
+    "cargo": "CTO",
+    "empresa": "FinanzApp",
+    "inicial": "C",
+    "estrellas": 5,
+    "texto": "Tenía miedo de invertir en desarrollo a medida por experiencias pasadas. The Silent Algorithm cambió esa percepción completamente. Comunicación transparente, código impecable y un resultado que superó las expectativas del equipo técnico interno.",
+    "destacado": false
+  },
+  {
+    "nombre": "Valentina Ruiz",
+    "cargo": "Directora",
+    "empresa": "Studio Meridian",
+    "inicial": "V",
+    "estrellas": 5,
+    "texto": "Lo que más valoro es que no me vendieron más de lo que necesitaba. Me propusieron la solución correcta al presupuesto correcto. El sitio web no solo es hermoso, convierte, y eso es lo que importa.",
+    "destacado": false
+  },
+  {
+    "nombre": "Andrés Morales",
+    "cargo": "Fundador",
+    "empresa": "DataCore",
+    "inicial": "A",
+    "estrellas": 5,
+    "texto": "El pipeline de automatización que construyeron procesa datos que antes requerían 3 personas trabajando todo el día. Ahora corre solo cada noche y ni nos damos cuenta. Eso es software silencioso en acción.",
+    "destacado": false
+  }
+]

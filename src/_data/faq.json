@@ -1,0 +1,32 @@
+[
+  {
+    "pregunta": "¿Cuánto cuesta un proyecto de software a medida?",
+    "respuesta": "Depende de la complejidad, pero trabajamos con rangos claros según paquete. Un sistema básico parte desde $2,500 USD. Un sistema empresarial complejo puede superar los $15,000 USD. Siempre entregamos una propuesta detallada antes de comprometer cualquier recurso.",
+    "categoria": "Presupuesto"
+  },
+  {
+    "pregunta": "¿Cuánto tiempo toma construir un sitio web?",
+    "respuesta": "Un sitio web informativo de calidad toma entre 3 y 5 semanas. Una aplicación web con funcionalidades complejas puede tomar entre 8 y 16 semanas. El tiempo depende más de la claridad de los requerimientos que de nuestra capacidad técnica.",
+    "categoria": "Tiempos"
+  },
+  {
+    "pregunta": "¿Con qué tecnologías trabajan?",
+    "respuesta": "Python (Django, FastAPI) y Node.js para backend. React, Next.js y Eleventy para frontend. PostgreSQL, MySQL y MongoDB para bases de datos. AWS, GCP y Vercel para infraestructura. Elegimos la herramienta correcta para cada problema, no la que más conocemos.",
+    "categoria": "Tecnología"
+  },
+  {
+    "pregunta": "¿Qué pasa después de entregar el proyecto?",
+    "respuesta": "Todo proyecto incluye 60 días de soporte post-entrega sin costo adicional. Después ofrecemos planes de mantenimiento mensual o consultoría según demanda. Nunca dejamos un proyecto abandonado; el código es tuyo desde el día uno.",
+    "categoria": "Post-entrega"
+  },
+  {
+    "pregunta": "¿Trabajan con empresas de cualquier tamaño?",
+    "respuesta": "Sí, pero somos más efectivos con empresas que ya tienen procesos definidos y un problema específico que resolver. Trabajamos con startups en etapa de crecimiento, PyMEs y departamentos de tecnología de empresas medianas. No somos el estudio correcto para proyectos sin presupuesto definido.",
+    "categoria": "Clientes"
+  },
+  {
+    "pregunta": "¿Cómo es el proceso de trabajo con ustedes?",
+    "respuesta": "1) Discovery: entendemos tu problema en profundidad. 2) Propuesta técnica y comercial detallada. 3) Desarrollo en sprints con demos quincenales. 4) Testing riguroso. 5) Entrega y capacitación. 6) Soporte post-lanzamiento. Siempre con comunicación asincrónica clara entre cada etapa.",
+    "categoria": "Proceso"
+  }
+]

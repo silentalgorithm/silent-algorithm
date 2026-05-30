@@ -1,0 +1,40 @@
+{
+  "siteName": "The Silent Algorithm",
+  "siteTagline": "Software · Precision · Craft",
+  "siteDescription": "Desarrollo de software a medida, páginas web de alto impacto y scripts de automatización para empresas que entienden el valor del código bien escrito.",
+  "siteUrl": "https://www.thesilentalgorithm.com",
+  "siteEmail": "secreto@thesilentalgorithm.com",
+  "siteWhatsapp": "+15550000000",
+  "siteAuthor": "The Silent Algorithm",
+  "siteLocale": "es_ES",
+  "siteLanguage": "es",
+  "siteTwitter": "@SilentAlgorithm",
+  "siteLinkedin": "https://linkedin.com/company/the-silent-algorithm",
+  "siteGithub": "https://github.com/thesilentialgorithm",
+  "ogImage": "/assets/images/og-default.jpg",
+  "fundado": "2022",
+  "navLinks": [
+    { "label": "Nosotros", "url": "/#nosotros" },
+    { "label": "Servicios", "url": "/#servicios" },
+    { "label": "Blog", "url": "/blog/" },
+    { "label": "FAQ", "url": "/#faq" }
+  ],
+  "__nabLinks": [{ "label": "Proyectos", "url": "/#proyectos" }],
+  "serviciosNav": [
+    {
+      "label": "Software a Medida",
+      "url": "/servicios/software-a-medida/",
+      "icono": "code"
+    },
+    {
+      "label": "Desarrollo Web",
+      "url": "/servicios/desarrollo-web/",
+      "icono": "monitor"
+    },
+    {
+      "label": "Automatizacion",
+      "url": "/servicios/automatizacion/",
+      "icono": "layers"
+    }
+  ]
+}

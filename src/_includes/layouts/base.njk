@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="{{ site.siteLanguage }}" class="no-js">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {# ── TITLE ── #}
+    <title>
+      {% if title %}{{ title }} — {{ site.siteName }}
+      {% else %}{{ site.siteName }} — {{ site.siteTagline }}
+      {% endif %}
+    </title>
+
+    {# ── META BÁSICO ── #}
+    <meta name="description" content="{{ descripcion or site.siteDescription }}">
+    <meta name="author" content="{{ autor or site.siteAuthor }}">
+    <meta name="robots" content="{{ robots or 'index, follow' }}">
+    <link rel="canonical" href="{{ site.siteUrl }}{{ page.url }}">
+
+    {# ── OPEN GRAPH ── #}
+    <meta property="og:type" content="{{ ogType or 'website' }}">
+    <meta property="og:title"
+    content="{% if title %}{{ title }} — {{ site.siteName }}{% else %}{{ site.siteName }}{% endif %}">
+    <meta property="og:description" content="{{ descripcion or site.siteDescription }}">
+    <meta property="og:url" content="{{ site.siteUrl }}{{ page.url }}">
+    <meta property="og:site_name" content="{{ site.siteName }}">
+    <meta property="og:locale" content="{{ site.siteLocale }}">
+    <meta property="og:image" content="{{ site.siteUrl }}{{ ogImage or site.ogImage }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ title or site.siteName }}">
+
+    {# ── TWITTER CARD ── #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ site.siteTwitter }}">
+    <meta name="twitter:title"
+    content="{% if title %}{{ title }} — {{ site.siteName }}{% else %}{{ site.siteName }}{% endif %}">
+    <meta name="twitter:description" content="{{ descripcion or site.siteDescription }}">
+    <meta name="twitter:image" content="{{ site.siteUrl }}{{ ogImage or site.ogImage }}">
+
+    {# ── ARTICLE META (solo en posts del blog) ── #}
+    {% if ogType == "article" %}
+      <meta property="article:published_time" content="{{ page.date | fechaISO }}">
+      <meta property="article:author" content="{{ autor or site.siteAuthor }}">
+      {% if categoria %}
+        <meta property="article:section" content="{{ categoria }}">
+      {% endif %}
+      {% if etiquetas %}
+        {% for etiqueta in etiquetas %}
+          <meta property="article:tag" content="{{ etiqueta }}">
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+
+    {# ── SCHEMA.ORG JSON-LD ── #}
+    {% if ogType == "article" %}
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "{{ title }}",
+          "description": "{{ descripcion or site.siteDescription }}",
+          "datePublished": "{{ page.date | fechaISO }}",
+          "author": {
+            "@type": "Organization",
+            "name": "{{ site.siteName }}",
+            "url": "{{ site.siteUrl }}"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.siteName }}",
+            "url": "{{ site.siteUrl }}"
+          },
+          "url": "{{ site.siteUrl }}{{ page.url }}"
+        }
+      </script>
+    {% else %}
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "{{ site.siteName }}",
+          "url": "{{ site.siteUrl }}",
+          "description": "{{ site.siteDescription }}",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "{{ site.siteEmail }}",
+            "contactType": "customer service"
+          }
+        }
+      </script>
+    {% endif %}
+
+    {# ── PRECONNECT ── #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    {# ── FONTS ── #}
+    <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+    {# ── CSS ── #}
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    {% block extraCss %}{% endblock %}
+
+    {# ── FAVICON ── #}
+    {#
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"> #}
+    <link rel="icon" type="image/svg" href="/assets/images/favicon.svg">
+
+  </head>
+
+  <body class="theme-dark" data-barba="wrapper">
+
+    {# ── CUSTOM CURSOR (desktop only) ── #}
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+    {# ── PAGE TRANSITION OVERLAY ── #}
+    <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+    {# ── NOISE TEXTURE ── #}
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    {# ── NAVIGATION ── #}
+    {% include "partials/nav.njk" %}
+
+    {# ── MAIN CONTENT ── #}
+    <main id="main" data-barba="container" data-barba-namespace="{{ namespace or 'default' }}">
+      {% block content %}{% endblock %}
+    </main>
+    <div class="content-skip-link">
+      <a class="skip-link" href="#main">Saltar al contenido principal</a>
+    </div>
+
+    {# ── FOOTER ── #}
+    {% include "partials/footer.njk" %}
+    {% include "partials/notification.njk" %}
+
+    {# ── SCRIPTS ── #}
+    <script>
+      document
+        .documentElement
+        .classList
+        .remove('no-js');
+    </script>
+    <script src="/assets/js/utils.js" defer></script>
+    <script src="/assets/js/cursor.js" defer></script>
+    <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/clipboard.js" defer></script>
+    <script src="/assets/js/animations.js" defer></script>
+    {% block extraJs %}{% endblock %}
+
+  </body>
+
+</html>

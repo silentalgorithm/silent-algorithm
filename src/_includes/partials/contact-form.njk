@@ -1,0 +1,140 @@
+<div class="contact-form">
+  <h3 class="contact-form__title serif">Cuéntanos sobre tu proyecto</h3>
+
+  <form
+    id="contactForm"
+    class="form"
+    novalidate
+    aria-label="Formulario de contacto"
+  >
+    {# Honeypot anti-spam #}
+    <div class="form__honeypot" aria-hidden="true">
+      <label for="website">No llenar este campo</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="form__row">
+      <div class="form__group">
+        <label class="form__label" for="nombre">
+          Nombre <span aria-hidden="true">*</span>
+        </label>
+        <input
+          class="form__input"
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Tu nombre completo"
+          autocomplete="given-name"
+          required
+          aria-required="true"
+          aria-describedby="nombre-error"
+        >
+        <span class="form__error" id="nombre-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label" for="empresa">Empresa</label>
+        <input
+          class="form__input"
+          type="text"
+          id="empresa"
+          name="empresa"
+          placeholder="Nombre de tu empresa"
+          autocomplete="organization"
+        >
+      </div>
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="email">
+        Email <span aria-hidden="true">*</span>
+      </label>
+      <input
+        class="form__input"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="tu@email.com"
+        autocomplete="email"
+        required
+        aria-required="true"
+        aria-describedby="email-error"
+      >
+      <span class="form__error" id="email-error" role="alert" aria-live="polite"></span>
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="servicio">
+        Servicio de interés <span aria-hidden="true">*</span>
+      </label>
+      <select
+        class="form__select"
+        id="servicio"
+        name="servicio"
+        required
+        aria-required="true"
+        aria-describedby="servicio-error"
+      >
+        <option value="" disabled selected>Selecciona un servicio</option>
+        {% for s in site.serviciosNav %}
+          <option value="{{ s.label }}">{{ s.label }}</option>
+        {% endfor %}
+        <option value="Orientación">No estoy seguro, necesito orientación</option>
+      </select>
+      <span class="form__error" id="servicio-error" role="alert" aria-live="polite"></span>
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="mensaje">
+        Cuéntanos tu problema o idea <span aria-hidden="true">*</span>
+      </label>
+      <textarea
+        class="form__textarea"
+        id="mensaje"
+        name="mensaje"
+        placeholder="Describe brevemente lo que necesitas. Sin tecnicismos, desde tu perspectiva de negocio."
+        rows="5"
+        required
+        aria-required="true"
+        aria-describedby="mensaje-error"
+        minlength="20"
+      ></textarea>
+      <span class="form__error" id="mensaje-error" role="alert" aria-live="polite"></span>
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="presupuesto">Presupuesto aproximado (USD)</label>
+      <select class="form__select" id="presupuesto" name="presupuesto">
+        <option value="" selected>Seleccionar rango</option>
+        <option value="<1000">Menos de $1,000</option>
+        <option value="1000-5000">$1,000 – $5,000</option>
+        <option value="5000-15000">$5,000 – $15,000</option>
+        <option value=">15000">Más de $15,000</option>
+        <option value="indefinido">Por definir</option>
+      </select>
+    </div>
+
+    {# Status message #}
+    <div
+      class="form__status"
+      id="formStatus"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      hidden
+    ></div>
+
+    <button class="btn btn--primary btn--full form__submit" type="submit" id="formSubmit">
+      <span class="form__submit-text">Enviar mensaje</span>
+      <span class="form__submit-loading" aria-hidden="true" hidden>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-dasharray="60" stroke-dashoffset="30"/></svg>
+        Enviando…
+      </span>
+    </button>
+
+    <p class="form__disclaimer mono" style="text-align:center; margin-top: 16px;">
+      Sin spam. Tu información es confidencial.
+    </p>
+
+  </form>
+</div>

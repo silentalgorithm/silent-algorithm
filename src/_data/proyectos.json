@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "nexus-erp",
+    "nombre": "Nexus — ERP Logístico",
+    "categoria": "Software a Medida",
+    "year": "2024",
+    "descripcion": "Sistema de gestión logística con trazabilidad en tiempo real para empresa distribuidora con 200+ usuarios concurrentes.",
+    "tecnologias": ["Python", "FastAPI", "PostgreSQL", "React", "Redis"],
+    "color": "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+    "destacado": true
+  },
+  {
+    "slug": "aurum-inmobiliaria",
+    "nombre": "Aurum — Inmobiliaria Digital",
+    "categoria": "Desarrollo Web",
+    "year": "2024",
+    "descripcion": "Plataforma web de propiedades con búsqueda avanzada, tours 3D y dashboard de métricas para agentes.",
+    "tecnologias": ["Next.js", "Node.js", "MongoDB", "AWS S3"],
+    "color": "linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%)",
+    "destacado": true
+  },
+  {
+    "slug": "dataflow-etl",
+    "nombre": "DataFlow — Pipeline ETL",
+    "categoria": "Automatización",
+    "year": "2023",
+    "descripcion": "Sistema de extracción y transformación de datos de 15 fuentes distintas con reportes automáticos diarios.",
+    "tecnologias": ["Python", "Airflow", "PostgreSQL", "Pandas"],
+    "color": "linear-gradient(135deg, #1a0a2e 0%, #2c1654 100%)",
+    "destacado": true
+  },
+  {
+    "slug": "sentinel-dashboard",
+    "nombre": "Sentinel — Dashboard Analítico",
+    "categoria": "Software a Medida",
+    "year": "2023",
+    "descripcion": "Panel de control con visualizaciones en tiempo real para startup fintech con integraciones a 8 APIs externas.",
+    "tecnologias": ["React", "D3.js", "Node.js", "MongoDB"],
+    "color": "linear-gradient(135deg, #0a1628 0%, #0d2137 100%)",
+    "destacado": false
+  },
+  {
+    "slug": "meridian-studio",
+    "nombre": "Meridian — Estudio Creativo",
+    "categoria": "Desarrollo Web",
+    "year": "2024",
+    "descripcion": "Sitio de portafolio de alto impacto para agencia de diseño con animaciones CSS y CMS headless.",
+    "tecnologias": ["Eleventy", "GSAP", "Sanity CMS", "Netlify"],
+    "color": "linear-gradient(135deg, #1f1506 0%, #2e1f08 100%)",
+    "destacado": false
+  },
+  {
+    "slug": "phantom-bot",
+    "nombre": "Phantom — Bot de Precios",
+    "categoria": "Automatización",
+    "year": "2023",
+    "descripcion": "Sistema de monitoreo competitivo de precios con alertas inteligentes para e-commerce.",
+    "tecnologias": ["Python", "Selenium", "Redis", "Telegram API"],
+    "color": "linear-gradient(135deg, #06191a 0%, #08282a 100%)",
+    "destacado": false
+  }
+]

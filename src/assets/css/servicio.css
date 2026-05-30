@@ -1,0 +1,8 @@
+/* ═══════════════════════════════════════════════════════════
+   SERVICIO.CSS — Service detail page extras
+   ═══════════════════════════════════════════════════════════ */
+
+.servicio-content { max-width: 800px; }
+
+.packages-note a { text-decoration: underline; text-underline-offset: 3px; }
+.packages-note a:hover { color: #D4B660; }

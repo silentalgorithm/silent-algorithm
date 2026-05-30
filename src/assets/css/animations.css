@@ -1,0 +1,150 @@
+/* ═══════════════════════════════════════════════════════════
+   ANIMATIONS.CSS — Keyframes, Reveal, Transitions
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes wipeRight {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
+}
+@keyframes wipeLeft {
+  from { transform: scaleX(1); transform-origin: right; }
+  to   { transform: scaleX(0); transform-origin: right; }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── PAGE TRANSITION ── */
+.page-transition.is-entering {
+  animation: wipeRight 0.4s var(--ease-snap) forwards;
+}
+.page-transition.is-leaving {
+  animation: wipeLeft 0.4s var(--ease-snap) forwards;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity  var(--duration-slower) var(--ease-snap),
+    transform var(--duration-slower) var(--ease-snap);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay variants */
+.reveal--delay-1 { transition-delay: 0.08s; }
+.reveal--delay-2 { transition-delay: 0.16s; }
+.reveal--delay-3 { transition-delay: 0.24s; }
+.reveal--delay-4 { transition-delay: 0.32s; }
+.reveal--delay-5 { transition-delay: 0.40s; }
+
+/* ── CURSOR ── */
+.cursor {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: transform var(--duration-fast), opacity var(--duration-base);
+  will-change: left, top;
+}
+.cursor-ring {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: calc(var(--z-cursor) - 1);
+  transform: translate(-50%, -50%);
+  transition:
+    width     var(--duration-base) var(--ease-silk),
+    height    var(--duration-base) var(--ease-silk),
+    border-color var(--duration-base),
+    opacity   var(--duration-base);
+  will-change: left, top;
+}
+.cursor.is-hovering { transform: translate(-50%, -50%) scale(1.5); }
+.cursor-ring.is-hovering {
+  width: 48px; height: 48px;
+  border-color: rgba(201, 168, 76, 0.7);
+}
+
+/* ── ARTICLE TOC HIGHLIGHT ── */
+.toc-link {
+  display: block;
+  font-family: var(--ff-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: var(--smoke);
+  padding: var(--space-2) 0 var(--space-2) var(--space-4);
+  border-left: 1px solid var(--color-border);
+  transition: color var(--duration-base), border-color var(--duration-base), padding-left var(--duration-base);
+  text-decoration: none;
+  line-height: 1.5;
+  margin-bottom: var(--space-2);
+}
+.toc-link:hover   { color: var(--ghost); border-left-color: rgba(201,168,76,0.3); }
+.toc-link.is-active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  padding-left: var(--space-5);
+}
+
+/* ── PROGRESS BAR (reading) ── */
+.reading-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--gold);
+  z-index: calc(var(--z-nav) + 1);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.1s linear;
+  pointer-events: none;
+}
+
+/* ── REDUCED MOTION overrides ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .orbit__ring { animation: none; }
+  .cursor, .cursor-ring { display: none; }
+  .page-transition { display: none; }
+}

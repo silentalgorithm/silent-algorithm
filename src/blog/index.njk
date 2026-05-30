@@ -1,0 +1,13 @@
+---
+layout: layouts/blog.njk
+title: Blog
+descripcion: "Artículos técnicos y reflexiones de negocio sobre desarrollo de software, automatización y diseño web. El libro digital de The Silent Algorithm."
+namespace: blog-all
+extraCss: '<link rel="stylesheet" href="/assets/css/blog-post.css">'
+pagination:
+  data: collections.blog
+  size: 9
+  alias: posts
+  reverse: true
+permalink: "blog/{% if pagination.pageNumber > 0 %}pagina/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---

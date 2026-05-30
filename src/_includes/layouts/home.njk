@@ -1,0 +1,456 @@
+{% extends "layouts/base.njk" %}
+
+{% block extraJs %}
+  <script src="/assets/js/home.js" defer></script>
+  <script src="/assets/js/contact-form.js" defer></script>
+{% endblock %}
+
+{% block content %}
+
+  {# ── HERO ── #}
+  <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="hero__grid-lines" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__kicker reveal" aria-label="Establecida en 2022">
+          <span aria-hidden="true"></span>Est. 2022 · Remote-first · Global
+      </p>
+        <h1 class="hero__title reveal reveal--delay-1" id="hero-title">
+        Software que <em>piensa</em><br>
+        mientras el mundo<br>
+        duerme.
+      </h1>
+        <p class="hero__desc reveal reveal--delay-2">
+        Construimos sistemas a medida, sitios web de alto impacto y scripts de automatización para empresas que entienden que el código bien escrito es ventaja competitiva sostenida.
+      </p>
+        <div class="hero__actions reveal reveal--delay-3">
+          <a href="#servicios" class="btn btn--primary">Ver servicios</a>
+          <a href="/blog/" class="btn btn--ghost">
+          Leer el blog
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal reveal--delay-2" aria-hidden="true">
+        <div class="orbit">
+          <div class="orbit__ring orbit__ring--1"></div>
+          <div class="orbit__ring orbit__ring--2"></div>
+          <div class="orbit__ring orbit__ring--3"></div>
+          <div class="orbit__core">
+            <span class="orbit__symbol">∮</span>
+            <span class="orbit__label">Silent · Precise · Efficient</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__stats container reveal reveal--delay-3">
+      <div class="stat">
+        <strong class="stat__number" data-count="48">0</strong>
+        <span class="stat__label">Proyectos entregados</span>
+      </div>
+      <div class="stat">
+        <strong class="stat__number">100%</strong>
+        <span class="stat__label">Satisfacción cliente</span>
+      </div>
+      <div class="stat">
+        <strong class="stat__number" data-count="3">0</strong>
+        <span class="stat__label">Años de experiencia</span>
+      </div>
+      <div class="stat">
+        <strong class="stat__number">24h</strong>
+        <span class="stat__label">Tiempo de respuesta</span>
+      </div>
+    </div>
+  </section>
+
+  {# ── NOSOTROS ── #}
+  <section class="section section--alt" id="nosotros" aria-labelledby="nosotros-title">
+    <div class="container">
+      <div class="about__grid">
+
+        <div class="about__left">
+          <p class="section__label reveal">
+            <span aria-hidden="true"></span>Quiénes somos
+        </p>
+          <h2 class="section__title reveal reveal--delay-1" id="nosotros-title">
+          No somos una agencia.<br>Somos un <em>estudio</em>.
+        </h2>
+          <p class="section__sub reveal reveal--delay-2">
+          Pequeños de propósito, precisos de oficio. Cada proyecto recibe atención directa de quienes realmente entienden el problema.
+        </p>
+
+          <div class="pillars reveal reveal--delay-2">
+            <div class="pillar">
+              <span class="pillar__num">01</span>
+              <h3 class="pillar__title">Silencio estratégico</h3>
+              <p class="pillar__desc">Menos ruido. Más código funcional que crea valor real desde el día uno.</p>
+            </div>
+            <div class="pillar">
+              <span class="pillar__num">02</span>
+              <h3 class="pillar__title">Precisión quirúrgica</h3>
+              <p class="pillar__desc">No construimos lo que no necesitas. Diseñamos lo exacto para tu problema.</p>
+            </div>
+            <div class="pillar">
+              <span class="pillar__num">03</span>
+              <h3 class="pillar__title">Código que perdura</h3>
+              <p class="pillar__desc">Arquitecturas limpias, documentadas y escalables. Tu inversión crece contigo.</p>
+            </div>
+            <div class="pillar">
+              <span class="pillar__num">04</span>
+              <h3 class="pillar__title">Transparencia total</h3>
+              <p class="pillar__desc">Sabes en qué etapa está tu proyecto, siempre. Sin sorpresas, sin letra chica.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__right reveal reveal--delay-2">
+          <blockquote class="manifesto">
+            <p>"El mejor algoritmo no es el más complejo — es el que resuelve el problema correcto con la elegancia exacta que requiere."</p>
+            <cite>— Manifiesto · The Silent Algorithm</cite>
+          </blockquote>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ── SERVICIOS ── #}
+  <section class="section" id="servicios" aria-labelledby="servicios-title">
+    <div class="container">
+      <div class="section__header">
+        <div>
+          <p class="section__label reveal">
+            <span aria-hidden="true"></span>Lo que hacemos</p>
+          <h2 class="section__title reveal reveal--delay-1" id="servicios-title">
+          Tres disciplinas.<br>
+            <em>Un solo estándar.</em>
+          </h2>
+        </div>
+        <p class="section__sub reveal reveal--delay-2">
+        Cada servicio es una especialidad cultivada durante años de proyectos reales.
+      </p>
+      </div>
+
+      <div class="services-grid" role="list">
+        {% for servicio in collections.servicios %}
+          <article class="service-card reveal reveal--delay-{{ loop.index }}" role="listitem">
+            <a href="{{ servicio.url }}" class="service-card__link" aria-label="Ver servicio: {{ servicio.data.title }}">
+              <span class="service-card__num">Servicio · 0{{ loop.index }}</span>
+              <div class="service-card__icon" aria-hidden="true">
+                {% include "partials/icons/" + servicio.data.icono + ".njk" %}
+              </div>
+              <h3 class="service-card__title">{{ servicio.data.title }}</h3>
+              <p class="service-card__desc">{{ servicio.data.resumen }}</p>
+              <ul class="service-card__tags" aria-label="Tecnologías">
+                {% for tag in servicio.data.tags %}
+                  <li class="tag">{{ tag }}</li>
+                {% endfor %}
+              </ul>
+              <span class="service-card__cta" aria-hidden="true">
+            Explorar servicio <span>→</span>
+              </span>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# ── PROYECTOS ── #}
+  {# <section class="section section--alt" id="proyectos" aria-labelledby="proyectos-title">
+    <div class="container">
+      <div class="section__header">
+        <div>
+          <p class="section__label reveal">
+            <span aria-hidden="true"></span>Trabajo selecto</p>
+          <h2 class="section__title reveal reveal--delay-1" id="proyectos-title">
+          Proyectos que<br>
+            <em>hablan por sí solos.</em>
+          </h2>
+        </div>
+      </div>
+
+      <div class="projects-filter reveal" role="tablist" aria-label="Filtrar proyectos">
+        <button class="filter-btn filter-btn--active" role="tab" aria-selected="true" data-filter="todos">Todo</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Software a Medida">Software a Medida</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Desarrollo Web">Web</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="Automatización">Automatización</button>
+      </div>
+
+      <div class="projects-grid reveal reveal--delay-1" id="projectsGrid" role="list">
+        {% for proyecto in proyectos %}
+          <article class="project-item" role="listitem" data-categoria="{{ proyecto.categoria }}" style="--project-bg: {{ proyecto.color }}">
+            <div class="project-item__bg" aria-hidden="true"></div>
+            <div class="project-item__content">
+              <div class="project-item__always">
+                <p class="project-item__cat">{{ proyecto.categoria }}</p>
+                <h3 class="project-item__name">{{ proyecto.nombre }}</h3>
+                <p class="project-item__year">{{ proyecto.year }}</p>
+              </div>
+              <div class="project-item__hover" aria-hidden="true">
+                <p class="project-item__desc">{{ proyecto.descripcion }}</p>
+                <ul class="project-item__stack">
+                  {% for tech in proyecto.tecnologias %}
+                    <li>{{ tech }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section> #}
+
+  {# ── BLOG ── #}
+  <section class="section" id="blog" aria-labelledby="blog-title">
+    <div class="container">
+      <div class="section__header">
+        <div>
+          <p class="section__label reveal">
+            <span aria-hidden="true"></span>El libro digital</p>
+          <h2 class="section__title reveal reveal--delay-1" id="blog-title">
+          Ideas que<br>
+            <em>construyen autoridad.</em>
+          </h2>
+        </div>
+        <a href="/blog/" class="btn btn--ghost reveal reveal--delay-2">Ver todos los artículos</a>
+      </div>
+
+      {% set featuredPosts = collections.destacados %}
+      {% set recentPosts = collections.blog | primeros(6) %}
+
+      {% if featuredPosts.length %}
+        <div class="blog-featured reveal">
+          {# ------------ Primer artículo destacado — grande #}
+          {% set postFeatured = featuredPosts[0] %}
+          <article class="blog-post blog-post--featured">
+            <div class="blog-post__visual" aria-hidden="true">
+              <div class="blog-post__visual-inner" style="{{ postFeatured.data.colorBg or 'background: var(--dusk)' }}"></div>
+            </div>
+            <div class="blog-post__body">
+              <div class="post-meta">
+                <span class="post-cat">{{ postFeatured.data.categoria }}</span>
+                <time class="post-date" datetime="{{ postFeatured.date | fechaISO }}">{{ postFeatured.date | fechaCorta }}</time>
+              </div>
+              <h3 class="blog-post__title">
+                <a href="{{ postFeatured.url }}">{{ postFeatured.data.title }}</a>
+              </h3>
+              <p class="blog-post__excerpt">{{ postFeatured.data.resumen }}</p>
+              <a href="{{ postFeatured.url }}" class="post-read-more" aria-label="Leer: {{ postFeatured.data.title }}">
+            Leer artículo <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          {# --------------- Sidebar con 2 artículos secundarios #}
+          <aside class="blog-sidebar">
+            {% for post in featuredPosts | primeros(2) %}
+              <article class="blog-post blog-post--side">
+                <div class="post-meta">
+                  <span class="post-cat">{{ post.data.categoria }}</span>
+                  <time class="post-date" datetime="{{ post.date | fechaISO }}">{{ post.date | fechaCorta }}</time>
+                </div>
+                <h3 class="blog-post__title blog-post__title--sm">
+                  <a href="{{ post.url }}">{{ post.data.title }}</a>
+                </h3>
+                <a href="{{ post.url }}" class="post-read-more" aria-label="Leer: {{ post.data.title }}">Leer <span aria-hidden="true">→</span>
+                </a>
+              </article>
+            {% endfor %}
+          </aside>
+        </div>
+      {% endif %}
+
+      {# ------------ Grid de posts recientes #}
+      <div class="blog-grid-secondary reveal reveal--delay-1" role="list">
+        {% for post in recentPosts | primeros(3) %}
+          <article class="blog-post-card" role="listitem">
+            <div class="post-meta">
+              <span class="post-cat">{{ post.data.categoria }}</span>
+              <time class="post-date" datetime="{{ post.date | fechaISO }}">{{ post.date | fechaCorta }}</time>
+            </div>
+            <h3 class="blog-post-card__title">
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+            <p class="blog-post-card__excerpt">{{ post.data.resumen | truncar(120) }}</p>
+            <a href="{{ post.url }}" class="post-read-more" aria-label="Leer: {{ post.data.title }}">Leer <span aria-hidden="true">→</span></a>
+          </article>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+  {# ── TESTIMONIOS ── #}
+  <section class="section section--alt" id="prueba-social" aria-labelledby="testimonios-title">
+    <div class="container">
+      <p class="section__label reveal">
+        <span aria-hidden="true"></span>Prueba social</p>
+      <h2 class="section__title reveal reveal--delay-1" id="testimonios-title">
+      Lo que dicen quienes<br>
+        <em>ya confiaron en nosotros.</em>
+      </h2>
+
+      <div class="testimonials reveal reveal--delay-2">
+        <div class="testimonials__list" role="tablist" aria-label="Seleccionar testimonio">
+          {% for t in testimonios %}
+            <button
+          class="testimonial-tab{% if loop.first %} testimonial-tab--active{% endif %}"
+          role="tab"
+          aria-selected="{{ 'true' if loop.first else 'false' }}"
+          aria-controls="testimonial-{{ loop.index }}"
+          data-index="{{ loop.index0 }}"
+        >
+              <span class="testimonial-tab__name">{{ t.nombre }}</span>
+              <span class="testimonial-tab__co">{{ t.cargo }} · {{ t.empresa }}</span>
+            </button>
+          {% endfor %}
+        </div>
+
+        <div class="testimonials__display">
+          {% for t in testimonios %}
+            <div
+          class="testimonial-panel{% if loop.first %} testimonial-panel--active{% endif %}"
+          role="tabpanel"
+          id="testimonial-{{ loop.index }}"
+          aria-hidden="{{ 'false' if loop.first else 'true' }}"
+        >
+              <blockquote class="testimonial-quote">
+                <p>"{{ t.texto }}"</p>
+              </blockquote>
+              <footer class="testimonial-footer">
+                <div class="testimonial-avatar" aria-hidden="true">{{ t.inicial }}</div>
+                <div>
+                  <p class="testimonial-name">{{ t.nombre }}</p>
+                  <p class="testimonial-co mono">{{ t.cargo }} · {{ t.empresa }}</p>
+                </div>
+                <div class="testimonial-stars" aria-label="{{ t.estrellas }} de 5 estrellas">
+                  {% for i in range(0, t.estrellas) %}★{% endfor %}
+                </div>
+              </footer>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="clients-strip reveal">
+        <p class="clients-strip__label">Empresas que confían en nuestro trabajo</p>
+        <ul class="clients-logos" aria-label="Clientes">
+          {% for t in testimonios %}
+            <li class="client-logo">{{ t.empresa }}</li>
+          {% endfor %}
+          <li class="client-logo">Aurum Propiedades</li>
+          <li class="client-logo">Nexus Systems</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  {# ── FAQ ── #}
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="faq__layout">
+
+        <div class="faq__left">
+          <p class="section__label reveal">
+            <span aria-hidden="true"></span>Preguntas frecuentes</p>
+          <h2 class="section__title reveal reveal--delay-1" id="faq-title">
+          Respuestas<br>
+            <em>honestas.</em>
+          </h2>
+          <p class="section__sub reveal reveal--delay-2">
+          Sin ambigüedades corporativas. Si tienes una pregunta que no está aquí, escríbenos directamente.
+        </p>
+          <a href="#contacto" class="btn btn--ghost reveal reveal--delay-3">Hacer una pregunta</a>
+        </div>
+
+        <div class="faq__list reveal reveal--delay-2">
+          {% for item in faq %}
+            <div class="faq-item" id="faq-{{ loop.index }}">
+              <button
+            class="faq-item__question"
+            aria-expanded="{{ 'true' if loop.first else 'false' }}"
+            aria-controls="faq-answer-{{ loop.index }}"
+          >
+                <span>{{ item.pregunta }}</span>
+                <span class="faq-item__toggle" aria-hidden="true">+</span>
+              </button>
+              <div
+            class="faq-item__answer"
+            id="faq-answer-{{ loop.index }}"
+            role="region"
+            aria-labelledby="faq-{{ loop.index }}"
+            {% if not loop.first %}hidden{% endif %}
+          >
+                <p>{{ item.respuesta }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ── CONTACTO ── #}
+
+  <section class="section section--alt" id="contacto" aria-labelledby="contacto-title">
+    <div class="container">
+      <div class="contact__layout">
+
+        <div class="contact__info">
+          <p class="section__label reveal">
+            <span aria-hidden="true"></span>Inicio de conversación</p>
+          <h2 class="section__title reveal reveal--delay-1" id="contacto-title">
+          Cuéntanos<br>tu <em>problema.</em>
+          </h2>
+          <p class="section__sub reveal reveal--delay-2">
+          Sin formularios de ventas agresivos. Solo una conversación honesta sobre si podemos ayudarte.
+        </p>
+
+          <ul class="contact-channels reveal reveal--delay-2">
+            <li class="contact-channel">
+              <div class="contact-channel__icon" aria-hidden="true">
+                {% include "partials/icons/mail.njk" %}
+              </div>
+              <div>
+                <p class="contact-channel__label">Email directo</p>
+                <button id="btn_copy_email" class="contact-channel__value" value="{{ site.siteEmail }}">Ponte en contacto con nosotros</button>
+              </div>
+            </li>
+            {# <li class="contact-channel">
+              <div class="contact-channel__icon" aria-hidden="true">
+                {% include "partials/icons/message.njk" %}
+              </div>
+              <div>
+                <p class="contact-channel__label">WhatsApp</p>
+                <a class="contact-channel__value" href="https://wa.me/{{ site.siteWhatsapp }}">{{ site.siteWhatsapp }}</a>
+              </div>
+            </li> #}
+            <li class="contact-channel">
+              <div class="contact-channel__icon" aria-hidden="true">
+                {% include "partials/icons/clock.njk" %}
+              </div>
+              <div>
+                <p class="contact-channel__label">Horario de respuesta</p>
+                <p class="contact-channel__value">Lun – Vie · 9am – 6pm (GMT-5)</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact__form reveal reveal--delay-2">
+          {% include "partials/contact-form.njk" %}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

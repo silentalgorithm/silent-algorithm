@@ -136,7 +136,7 @@
       // https://github.com/github/fetch
       const res = await fetch(
         // "https://formsubmit.co/ajax/cf4613eefdedda49610cc78124d20ff1",
-        "https://formsubmit.co/ajax/secreto@thesilentalgorithm.com",
+        "https://formsubmit.co/ajax/2216b3605d3a86fcea3d52eb6b8042be",
         {
           method: "POST",
           headers: {

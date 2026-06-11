@@ -119,11 +119,7 @@ export default function (eleventyConfig) {
 
   // ? La funcion extendRemplace remplaza el texto indicado de cada coincidencia de la exprecion regular (regExp,textoOriginal,valorDeRemplazo)
   eleventyConfig.addNunjucksGlobal("debug", (value) => {
-    // console.log(`DEBUG: ${}`);
-    Object.entries(value).map(
-      ([key, val]) =>
-        key !== "rawInput" && console.log(`DEBUG: ${key} = ${val}`),
-    );
+    console.log(`DEBUG: ${value}`);
   });
 
   // filtro global de el año copyright

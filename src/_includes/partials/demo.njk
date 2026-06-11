@@ -1,0 +1,49 @@
+{# .banner-demo {
+        background: #1c1c1c;
+        color: #c9a84c;
+        text-align: center;
+        padding: 10px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        a {
+            text-decoration: underline;
+        }
+    } #}
+<style>
+    .boton-flotante {
+        position: fixed;
+        padding: 14px 24px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-decoration: none;
+        z-index: 9999;
+        border: none;
+    }
+    .boton-flotante-demo-return {
+        top: 100px;
+        left: 24px;
+        background: #1c1c1c;
+        color: #c9a84c;
+    }
+    .boton-flotante-demo-contact {
+        bottom: 24px;
+        right: 24px;
+        background: #c9a84c;
+        color: #1c1c1c;
+    }
+</style>
+{% set watt = "https://wa.me/message/JVDIMOXQKOMYM1?text=Hola,%20vi%20el%20demo%20de%20mi%20negocio%20y%20me%20interesa" %}
+{# <div class="banner-demo">
+        Demo preparado por <a href="/">The Silent Algorithm</a> para <span id="cliente"></span>.
+    </div> #}
+<a href="/" class="boton-flotante boton-flotante-demo-return">
+        &larr; Volver al inicio
+    </a>
+<a href="{{ watt }}" class="boton-flotante boton-flotante-demo-contact">
+        Quiero este sitio →
+    </a>

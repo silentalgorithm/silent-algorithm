@@ -1,0 +1,120 @@
+/* ═══════════════════════════════════════════════════════════
+   TOKENS.CSS — Design System Variables
+   The Silent Algorithm
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── COLOR PALETTE ── */
+  --ink:       #0D0D0D;
+  --ink-soft:  #1A1A1A;
+  --dusk:      #2C2C2C;
+  --smoke:     #6B6B6B;
+  --ghost:     #A8A8A8;
+  --veil:      #E8E4DC;
+  --ivory:     #F5F2EB;
+  --paper:     #FAFAF7;
+  --gold:      #C9A84C;
+  --gold-dim:  #8A6B2E;
+  --gold-glow: rgba(201, 168, 76, 0.15);
+  --red-sig:   #8B2020;
+
+  /* ── SEMANTIC COLORS ── */
+  --color-bg:         var(--ink);
+  --color-bg-alt:     var(--ink-soft);
+  --color-text:       var(--ivory);
+  --color-text-muted: var(--ghost);
+  --color-text-dim:   var(--smoke);
+  --color-accent:     var(--gold);
+  --color-accent-dim: var(--gold-dim);
+  --color-border:     rgba(255, 255, 255, 0.06);
+  --color-border-gold: rgba(201, 168, 76, 0.12);
+
+  /* ── TYPOGRAPHY ── */
+  --ff-serif:  'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --ff-mono:   'DM Mono', 'Courier New', 'Lucida Console', monospace;
+  --ff-sans:   'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Type scale (Major Third 1.25) */
+  --text-xs:   0.64rem;   /* 10.24px */
+  --text-sm:   0.8rem;    /* 12.8px  */
+  --text-base: 1rem;      /* 16px    */
+  --text-md:   1.25rem;   /* 20px    */
+  --text-lg:   1.563rem;  /* 25px    */
+  --text-xl:   1.953rem;  /* 31.25px */
+  --text-2xl:  2.441rem;  /* 39px    */
+  --text-3xl:  3.052rem;  /* 48.8px  */
+  --text-4xl:  3.815rem;  /* 61px    */
+  --text-5xl:  4.768rem;  /* 76.3px  */
+
+  /* Fluid heading */
+  --text-hero:   clamp(3rem, 5vw + 1rem, 5.5rem);
+  --text-section: clamp(2.2rem, 4vw, 3.6rem);
+  --text-card:    clamp(1.3rem, 2vw, 1.8rem);
+
+  /* ── SPACING ── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32: 128px;
+
+  /* Section rhythm */
+  --section-py:  clamp(60px, 8vw, 120px);
+  --container-px: clamp(20px, 4vw, 40px);
+
+  /* ── LAYOUT ── */
+  --container-max: 1280px;
+  --container-narrow: 800px;
+  --container-wide: 1440px;
+
+  /* ── BORDERS ── */
+  --radius-sm:  2px;
+  --radius-md:  4px;
+  --radius-lg:  8px;
+  --radius-full: 9999px;
+
+  /* ── SHADOWS ── */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:  0 12px 40px rgba(0,0,0,0.6);
+  --shadow-gold: 0 0 24px rgba(201,168,76,0.15);
+
+  /* ── TRANSITIONS ── */
+  --ease-silk:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-snap:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:   cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-in:    cubic-bezier(0.4, 0, 1, 1);
+
+  --duration-fast:   150ms;
+  --duration-base:   300ms;
+  --duration-slow:   500ms;
+  --duration-slower: 800ms;
+
+  /* ── Z-INDEX STACK ── */
+  --z-base:       0;
+  --z-raised:     10;
+  --z-dropdown:   100;
+  --z-nav:        200;
+  --z-modal:      500;
+  --z-transition: 900;
+  --z-cursor:     1000;
+  --z-noise:      999;
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast:   0ms;
+    --duration-base:   0ms;
+    --duration-slow:   0ms;
+    --duration-slower: 0ms;
+  }
+}

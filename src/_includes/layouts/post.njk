@@ -124,7 +124,8 @@
         <div class="article__tags">
           <span class="mono" style="color: var(--smoke); margin-right: 12px;">Etiquetas:</span>
           {% for etiqueta in etiquetas %}
-            <a href="/blog/etiqueta/{{ etiqueta | slug }}/" class="tag">{{ etiqueta }}</a>
+            {# <a href="/blog/etiqueta/{{ etiqueta | slug }}/" class="tag">{{ etiqueta }}</a> #}
+            <span class="tag">{{ etiqueta }}</span>
           {% endfor %}
         </div>
       </div>
@@ -135,7 +136,7 @@
   {# ── RELATED POSTS ── #}
   {% set relatedPosts = collections.blog | excluir(page) %}
   {% if relatedPosts.length %}
-    <section class="section section--alt" aria-labelledby="related-title">
+    {# <section class="section section--alt" aria-labelledby="related-title">
       <div class="container">
         <p class="section__label">
           <span aria-hidden="true"></span>Continúa leyendo</p>
@@ -157,7 +158,8 @@
           {% endfor %}
         </div>
       </div>
-    </section>
+    </section> #}
+    <div style="background:red">{{relatedPosts.length}}</div>
   {% endif %}
 
   {# ── CTA BOTTOM ── #}

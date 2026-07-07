@@ -3,9 +3,13 @@ title: "La ilusión del sitio web hermoso que nadie convierte"
 resumen: "El diseño sin estrategia de conversión es solo arte que nadie compra. Cómo construir sitios web que no solo impresionan, sino que venden."
 categoria: Desarrollo Web
 etiquetas: [conversion, ux, web, estrategia]
-destacado: true
-colorBg: "background: linear-gradient(135deg, #1f1506 0%, #2e1f08 100%)"
 date: 2025-04-28
+
+colorBg: "background: linear-gradient(135deg, #1f1506 0%, #2e1f08 100%)"
+#   destacado: false
+#   autor: "The Silent Algorithm"
+#   cargoAutor: "Engineering Team"
+#   draft: false
 ---
 
 Existe una epidemia silenciosa en el mundo del diseño web. Afecta a agencias, a freelancers, a startups y a empresas establecidas por igual. Se llama **confundir estética con efectividad**.
@@ -18,7 +22,7 @@ El cliente pide un sitio "moderno, elegante, diferente". La agencia entrega algo
 
 ¿Qué salió mal?
 
-Nadie preguntó: *¿cuál es la acción que queremos que el visitante tome?*
+Nadie preguntó: _¿cuál es la acción que queremos que el visitante tome?_
 
 > "Un sitio web no es un cuadro. Es un vendedor que trabaja 24 horas los 365 días del año. Y como todo vendedor, necesita una estrategia, no solo una presentación bonita."
 
@@ -58,6 +62,7 @@ El rendimiento técnico no es un lujo ni un detalle de desarrollador. Es una var
 El error más costoso post-lanzamiento: medir visitas en lugar de comportamiento.
 
 Las métricas que importan:
+
 - **Tasa de conversión por página de destino** (no tasa de rebote global)
 - **Tiempo hasta primera interacción** con un CTA
 - **Porcentaje de scroll** en páginas críticas

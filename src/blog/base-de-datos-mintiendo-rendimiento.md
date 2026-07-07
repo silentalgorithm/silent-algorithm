@@ -4,6 +4,14 @@ resumen: "Patrones de consulta que parecen eficientes en desarrollo pero colapsa
 categoria: Performance
 etiquetas: [bases-de-datos, performance, sql, optimizacion]
 date: 2025-04-07
+imagenDestacada: "https://www.dedragones.shop/wp-content/uploads/2020/04/dragones-mitologicos.webp"
+imagenAlt: "texto alternativo"
+
+#   destacado: false
+#   autor: "The Silent Algorithm"
+#   cargoAutor: "Engineering Team"
+#   draft: false
+#   colorBg: "background: linear-gradient(135deg, #1a0a2e 0%, #2c1654 100%)"
 ---
 
 El entorno de desarrollo miente sistemáticamente. Con 200 registros todo parece rápido. Con 2 millones de registros y 50 usuarios concurrentes, los problemas emergen de formas que nadie anticipó.

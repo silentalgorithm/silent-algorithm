@@ -3,7 +3,15 @@ title: "El arte de leer APIs de terceros sin perder la cordura"
 resumen: "Estrategias de integración que sobreviven cambios inesperados en contratos externos, versioning roto y documentación desactualizada."
 categoria: Python
 etiquetas: [python, apis, integraciones, backend]
-date: 2025-04-21
+date: 2025-01-21
+imagenDestacada: "https://www.dedragones.shop/wp-content/uploads/2020/04/dragones-mitologicos.webp"
+imagenAlt: "texto alternativo"
+
+#   destacado: false
+#   autor: "The Silent Algorithm"
+#   cargoAutor: "Engineering Team"
+#   draft: false
+#   colorBg: "background: linear-gradient(135deg, #1a0a2e 0%, #2c1654 100%)"
 ---
 
 Toda empresa que usa software de terceros eventualmente enfrenta el mismo momento: una API externa cambia sin aviso, tu integración colapsa en producción a las 2am, y el equipo pasa el fin de semana parchando en lugar de construyendo.
@@ -38,7 +46,7 @@ La solución es introducir una capa de abstracción que aísle tu dominio de los
 class PasarelaPagoAdapter:
     def __init__(self, cliente_http: ClienteHTTP):
         self._cliente = cliente_http
-    
+
     def procesar_pago(self, monto: Decimal, referencia: str) -> ResultadoPago:
         try:
             respuesta = self._cliente.post('/payments', {

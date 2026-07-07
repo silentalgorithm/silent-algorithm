@@ -5,5 +5,6 @@
   "autor": "The Silent Algorithm",
   "cargoAutor": "Engineering Team",
   "destacado": false,
-  "draft": false
+  "draft": false,
+  "colorBg": "background: linear-gradient(135deg, #1a0a2e 0%, #2c1654 100%)"
 }

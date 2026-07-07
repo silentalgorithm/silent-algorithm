@@ -3,12 +3,18 @@ title: "Cuando un script de 50 líneas reemplaza a un equipo de 3 personas"
 resumen: "Los ROI más altos de automatización no vienen de sistemas complejos sino de eliminar fricciones pequeñas que se repiten cientos de veces al día."
 categoria: Automatización
 etiquetas: [python, automatizacion, roi, productividad]
-destacado: true
+date: 2026-06-30
 colorBg: "background: linear-gradient(135deg, #1a0a2e 0%, #2c1654 100%)"
-date: 2025-05-05
+imagenDestacada: "https://www.dedragones.shop/wp-content/uploads/2020/04/dragones-mitologicos.webp"
+imagenAlt: "texto alternativo"
+
+#   destacado: false
+#   autor: "The Silent Algorithm"
+#   cargoAutor: "Engineering Team"
+#   draft: false
 ---
 
-Hay un momento en la vida de toda empresa donde alguien —generalmente el CEO o el head of operations— dice: *"¿por qué seguimos haciendo esto a mano?"*
+Hay un momento en la vida de toda empresa donde alguien —generalmente el CEO o el head of operations— dice: _"¿por qué seguimos haciendo esto a mano?"_
 
 Ese momento suele llegar tarde. Años después de que el proceso manual se instaló como costumbre, absorbió decenas de horas semanales, y generó errores que nadie quiso contabilizar porque hacerlo resultaba incómodo.
 
@@ -41,20 +47,20 @@ from mailer import enviar_reporte
 
 def generar_reporte_semanal():
     semana_anterior = date.today() - timedelta(days=7)
-    
+
     # Extraer de las tres fuentes
     ventas_erp   = ERP.ventas_semana(semana_anterior)
     leads_crm    = CRM.leads_semana(semana_anterior)
     pedidos_web  = Ecommerce.pedidos_semana(semana_anterior)
-    
+
     # Consolidar y calcular KPIs
     reporte = ReporteVentas(ventas_erp, leads_crm, pedidos_web)
     reporte.calcular_kpis()
     reporte.formatear()
-    
+
     # Distribuir por rol
     enviar_reporte(reporte, destinatarios_por_rol())
-    
+
 if __name__ == '__main__':
     generar_reporte_semanal()
 ```

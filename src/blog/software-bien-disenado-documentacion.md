@@ -3,9 +3,13 @@ title: "Por qué el software bien diseñado no necesita documentación extensa"
 resumen: "El código que se explica a sí mismo no es un mito —es el resultado de decisiones de diseño conscientes que priorizan la legibilidad como un requisito funcional, no como un lujo."
 categoria: Arquitectura
 etiquetas: [clean-code, arquitectura, legibilidad, buenas-practicas]
-destacado: true
-colorBg: "background: linear-gradient(135deg, #0d1b2a 40%, #1a2d44 100%)"
 date: 2025-05-12
+colorBg: "background: linear-gradient(135deg, #0d1b2a 40%, #1a2d44 100%)"
+
+#   destacado: false
+#   autor: "The Silent Algorithm"
+#   cargoAutor: "Engineering Team"
+#   draft: false
 ---
 
 Existe una creencia ampliamente extendida en el mundo del desarrollo de software: que un sistema complejo necesita documentación extensa para ser mantenible. Esta creencia nace de una confusión fundamental entre **complejidad accidental** y **complejidad esencial**.
@@ -39,7 +43,7 @@ def calc(p, d):
 
 ## ¿Qué documentación sí tiene valor?
 
-Esto no significa que la documentación no tenga valor. Los ADRs (Architecture Decision Records) que explican el *por qué* de decisiones no obvias, los diagramas de flujo para procesos de negocio complejos, el README que explica cómo ejecutar el proyecto localmente —todo esto tiene su lugar.
+Esto no significa que la documentación no tenga valor. Los ADRs (Architecture Decision Records) que explican el _por qué_ de decisiones no obvias, los diagramas de flujo para procesos de negocio complejos, el README que explica cómo ejecutar el proyecto localmente —todo esto tiene su lugar.
 
 La diferencia está en documentar el **razonamiento**, no la mecánica. Si necesitas explicar cómo funciona tu código, ese es el síntoma. La causa es código que no comunica su intención por sí mismo.
 

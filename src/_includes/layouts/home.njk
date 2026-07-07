@@ -221,8 +221,8 @@
         <a href="/blog/" class="btn btn--ghost reveal reveal--delay-2">Ver todos los artículos</a>
       </div>
 
-      {% set featuredPosts = collections.destacados %}
-      {% set recentPosts = collections.blog | primeros(6) %}
+      {% set featuredPosts = collections.blog %}
+      {% set recentPosts = collections.blog | middleSlice(2) %}
 
       {% if featuredPosts.length %}
         <div class="blog-featured reveal">

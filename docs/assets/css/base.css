@@ -320,3 +320,8 @@ button {
   visibility: visible;
   opacity: 1;
 }
+/* estilod de las paginas demo */
+.page-demo {
+  width: 100%;
+  height: 100dvh;
+}

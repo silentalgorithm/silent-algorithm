@@ -256,6 +256,10 @@ export default function (eleventyConfig) {
 
   // First n items
   eleventyConfig.addFilter("primeros", (arr, n) => arr.slice(0, n));
+  eleventyConfig.addFilter("middleSlice", (arr, init, end = null) => {
+    if (end == null) end = arr.length;
+    return arr.slice(init, end);
+  });
 
   // Exclude current post from related
   eleventyConfig.addFilter("excluir", (arr, page) =>

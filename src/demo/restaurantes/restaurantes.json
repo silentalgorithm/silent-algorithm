@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/base-demo.njk",
+  "title": false,
+  "descripcion": "",
+  "namespace": "demo"
+}
